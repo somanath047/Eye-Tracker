@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+  }
+
+  .eyes {
+    display: flex;
+    gap: 50px;
+  }
+
+  .eye {
+    width: 120px;
+    height: 120px;
+    background: white; /* Sclera (white part of the eye) */
+    border: 4px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .iris {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #4caf50, #006400); /* Colored iris (green gradient) */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  .pupil {
+    width: 20px;
+    height: 20px;
+    background: black; /* Pupil */
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .eyelid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 50%;
+    transform: translateY(-100%); /* Hidden by default */
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .eye.blinking .eyelid {
+    transform: translateY(0); /* Cover the eye when blinking */
+  }
